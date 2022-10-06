@@ -7,28 +7,26 @@
 
 import UIKit
 
+
+//서울 . 부산 뷰
 class checkLocationViewController: UIViewController {
 
+    var viewControl = ViewController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func backBtn(_ sender: UIButton) {
-        self.dismiss(animated: true)
-    }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //버튼 클릭시 sender.currentTitle을 ViewControllerd의 locationName에 덮어씌우기
+    @IBAction func backBtn(_ sender: UIButton) {
+//        viewControl.getTitle(input: sender.currentTitle)
+        if let presenter = presentingViewController as? checkLocationViewController {
+            presenter.viewControl.locationName.text = sender.currentTitle
+            print(presenter.viewControl.locationName.text ?? "no value")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
-    */
 
 }

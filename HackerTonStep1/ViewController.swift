@@ -12,23 +12,25 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager!
     let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var checkLocation: Bool = false
-//    var someString: String?
-    
+    var someString: String?
     @IBOutlet weak var locationName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
+        
     }
     
-    //여기서부터 다시 하기
-
-
+    
     
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
         print("Hello")
     }
     
+    //요거랑
+    func getTitle(input: String?){
+        someString = input
+    }
     
     
     
