@@ -16,13 +16,6 @@ class LocationDeniedView: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
-    @IBAction func locationBtn(_ sender: UIButton) {
-        btnTitle = sender.currentTitle!
-        print(btnTitle)
-        self.dismiss(animated: false)
-        
 
-    }
     
 }

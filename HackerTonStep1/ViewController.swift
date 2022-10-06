@@ -12,8 +12,7 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager!
     let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var checkLocation: Bool = false
-    var locationDeniedView = LocationDeniedView()
-    
+//    var someString: String?
     
     @IBOutlet weak var locationName: UILabel!
     
@@ -23,11 +22,7 @@ class ViewController: UIViewController {
     }
     
     //여기서부터 다시 하기
-    override func viewWillAppear(_ animated: Bool) {
-        locationName.text = locationDeniedView.btnTitle
-        print(locationName.text)
-        locationName.text = "hi"
-    }
+
 
     
     @IBAction func locationReAllowCheck(_ sender: UIButton) {

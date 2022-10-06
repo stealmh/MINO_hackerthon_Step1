@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,13 +33,13 @@
                                 <rect key="frame" x="75" y="170" width="240" height="448"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지역이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcb-nh-iVs">
-                                        <rect key="frame" x="90.666666666666657" y="0.0" width="59" height="20.333333333333332"/>
+                                        <rect key="frame" x="90.666666666666657" y="0.0" width="59" height="43.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NlH-DR-4EZ">
-                                        <rect key="frame" x="0.0" y="53.333333333333343" width="240" height="128"/>
+                                        <rect key="frame" x="0.0" y="76.333333333333343" width="240" height="105"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날씨설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIh-sc-0sz">
                                         <rect key="frame" x="90.666666666666657" y="214.33333333333331" width="59" height="20.333333333333343"/>
@@ -137,10 +137,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="-28.436018957345969"/>
         </scene>
-        <!--Location Denied View-->
+        <!--Check Location View Controller-->
         <scene sceneID="cJA-2f-dqN">
             <objects>
-                <viewController storyboardIdentifier="locationFalseController" id="MnJ-hP-4Mk" customClass="LocationDeniedView" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="locationFalseController" id="MnJ-hP-4Mk" customClass="checkLocationViewController" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMQ-ep-0mU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="서울"/>
                                         <connections>
-                                            <action selector="locationBtn:" destination="MnJ-hP-4Mk" eventType="touchUpInside" id="P5k-3G-a56"/>
+                                            <action selector="backBtn:" destination="MnJ-hP-4Mk" eventType="touchUpInside" id="gvQ-Tb-v0c"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4s-oa-RIj">
@@ -171,7 +171,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="부산"/>
                                         <connections>
-                                            <action selector="locationBtn:" destination="MnJ-hP-4Mk" eventType="touchUpInside" id="rny-qV-UP5"/>
+                                            <action selector="backBtn:" destination="MnJ-hP-4Mk" eventType="touchUpInside" id="1F5-IF-s1V"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xlq-Nv-Ozn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="838" y="-28"/>
+            <point key="canvasLocation" x="708" y="-28"/>
         </scene>
     </scenes>
     <resources>
