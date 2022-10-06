@@ -10,7 +10,8 @@ import CoreLocation
 
 class ViewController: UIViewController {
     var locationManager: CLLocationManager!
-
+    let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -41,7 +42,11 @@ extension ViewController:CLLocationManagerDelegate{
         case .restricted, .notDetermined:
             print("사용자 : 위치 사용 여부 체크중")
         case .denied: // 허용 거부
-            print("사용자클릭 : 위치 허용 거부")
+            let aController = myStoryBoard.instantiateViewController(withIdentifier: "locationFalseController")
+            aController.modalPresentationStyle = .fullScreen
+            DispatchQueue.main.async {
+                self.present(aController, animated: false)
+            }
         default:
             print("GPS: default")
             
