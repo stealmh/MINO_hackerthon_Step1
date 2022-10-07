@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var locationManager: CLLocationManager!
     let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var checkLocation: Bool = false
-    var someString: String?
+    var paramName: String?
     @IBOutlet weak var locationName: UILabel!
     
     override func viewDidLoad() {
@@ -21,16 +21,17 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool){
+        if let first = paramName{
+            locationName.text = first
+        }
+    }
     
     
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
         print("Hello")
     }
     
-    //요거랑
-    func getTitle(input: String?){
-        someString = input
-    }
     
     
     
