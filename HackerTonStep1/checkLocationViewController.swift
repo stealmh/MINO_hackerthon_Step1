@@ -14,6 +14,7 @@ class checkLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("hello")
         // Do any additional setup after loading the view.
     }
     @IBAction func backBtn(_ sender: UIButton) {
