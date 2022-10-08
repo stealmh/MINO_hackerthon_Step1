@@ -9,21 +9,6 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="B9R-tL-bnL">
-            <objects>
-                <viewController id="lc7-1I-1AK" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ceg-ez-bZl">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="PO2-fh-G16"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VTa-UC-zHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1123" y="-11"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="mainVC" id="BYZ-38-t0r" customClass="ViewController" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
@@ -132,10 +117,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재위치 : 수원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wni-f2-WEp">
+                                <rect key="frame" x="144.33333333333334" y="61.000000000000007" width="101.66666666666666" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Wni-f2-WEp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1Gm-bD-oY9"/>
+                            <constraint firstItem="Wni-f2-WEp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="3zE-yK-D3F"/>
                             <constraint firstItem="Kv0-Fo-CQA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="75" id="9pe-cF-TuG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Kv0-Fo-CQA" secondAttribute="bottom" constant="192" id="Fgq-6w-6G9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kv0-Fo-CQA" secondAttribute="trailing" constant="75" id="Gzh-pY-Kt2"/>
@@ -145,6 +138,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="currentLocationLbl" destination="Wni-f2-WEp" id="gUb-YE-Z1N"/>
                         <outlet property="locationName" destination="hcb-nh-iVs" id="oEz-hd-5xy"/>
                     </connections>
                 </viewController>

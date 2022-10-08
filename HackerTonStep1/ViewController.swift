@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var checkLocation: Bool = false
     var paramName: String?
+    var currentLocationParamName: String?
+    
     @IBOutlet weak var locationName: UILabel!
+    @IBOutlet weak var currentLocationLbl: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +28,16 @@ class ViewController: UIViewController {
         if let first = paramName{
             locationName.text = first
         }
+        if let second = currentLocationParamName{
+            currentLocationLbl.text = second
+        }
     }
     
     
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
-        print("Hello")
+        if !checkLocation{
+            locationName.text = "위치정보 : 수원(default)"
+        }
     }
     
     
@@ -58,7 +66,8 @@ extension ViewController:CLLocationManagerDelegate{
         case .authorizedAlways, .authorizedWhenInUse:
             print("사용자 : 위치 허용")
             self.locationManager.startUpdatingLocation()
-            checkLocation = false
+            checkLocation = true
+            locationName.text = "제주도"
         case .restricted, .notDetermined:
             print("사용자 : 위치 사용 여부 체크중")
             
@@ -66,7 +75,7 @@ extension ViewController:CLLocationManagerDelegate{
         case .denied:
             let aController = myStoryBoard.instantiateViewController(withIdentifier: "locationFalseController")
             aController.modalPresentationStyle = .fullScreen
-            checkLocation = true
+            checkLocation = false
             DispatchQueue.main.async {
                 self.present(aController, animated: false)
             }

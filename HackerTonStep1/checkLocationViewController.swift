@@ -20,6 +20,7 @@ class checkLocationViewController: UIViewController {
         let preVC = self.presentingViewController
         guard let vc = preVC as? ViewController else {return}
         vc.paramName = sender.currentTitle
+        vc.currentLocationParamName = "위치정보 : 미사용"
         self.presentingViewController?.dismiss(animated: true)
         
     }
