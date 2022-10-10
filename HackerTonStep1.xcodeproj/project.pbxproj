@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1639123B28EF12E900891917 /* checkLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639123A28EF12E900891917 /* checkLocationViewController.swift */; };
+		16CB8F4C28F47B690052F0D8 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB8F4B28F47B690052F0D8 /* myCollectionViewCell.swift */; };
 		16EDBCC128ED032F0031DEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDBCC028ED032F0031DEFB /* AppDelegate.swift */; };
 		16EDBCC328ED032F0031DEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDBCC228ED032F0031DEFB /* SceneDelegate.swift */; };
 		16EDBCC528ED032F0031DEFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDBCC428ED032F0031DEFB /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1639123A28EF12E900891917 /* checkLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = checkLocationViewController.swift; sourceTree = "<group>"; };
+		16CB8F4B28F47B690052F0D8 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
 		16EDBCBD28ED032F0031DEFB /* HackerTonStep1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerTonStep1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EDBCC028ED032F0031DEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16EDBCC228ED032F0031DEFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				16EDBCC928ED03300031DEFB /* Assets.xcassets */,
 				16EDBCCB28ED03300031DEFB /* LaunchScreen.storyboard */,
 				16EDBCCE28ED03300031DEFB /* Info.plist */,
+				16CB8F4B28F47B690052F0D8 /* myCollectionViewCell.swift */,
 			);
 			path = HackerTonStep1;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EDBCC528ED032F0031DEFB /* ViewController.swift in Sources */,
+				16CB8F4C28F47B690052F0D8 /* myCollectionViewCell.swift in Sources */,
 				16EDBCC128ED032F0031DEFB /* AppDelegate.swift in Sources */,
 				1639123B28EF12E900891917 /* checkLocationViewController.swift in Sources */,
 				16EDBCC328ED032F0031DEFB /* SceneDelegate.swift in Sources */,
