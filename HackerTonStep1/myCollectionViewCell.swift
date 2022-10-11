@@ -23,4 +23,5 @@ class myCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var hTempLabel: UILabel!
     @IBOutlet weak var lTempLabel: UILabel!
     
+    
 }

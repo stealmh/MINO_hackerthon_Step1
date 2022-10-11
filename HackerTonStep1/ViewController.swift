@@ -10,59 +10,26 @@ import CoreLocation
 
 class ViewController: UIViewController {
     var locationManager: CLLocationManager!
-    let myStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     var checkLocation: Bool = false
-    var paramName: String?
-    var currentLocationParamName: String?
-    
-    var webImage: [String] = ["batman","captain","ironman","plus.circle"]
-    
-    @IBOutlet weak var myPage: UIPageControl!
-    @IBOutlet weak var locationName: UILabel!
-    
-    @IBOutlet weak var currentLocationLbl: UILabel!
+    var mycell = myCollectionViewCell()
+    @IBOutlet weak var locationYesOrNoLabel: UILabel!
+    var webImage: [String] = ["default","plus.circle"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        myPage.currentPage = 0
-        myPage.numberOfPages = webImage.count
-        
+
     }
-    
-    override func viewWillAppear(_ animated: Bool){
-        if let first = paramName{
-            locationName.text = first
-        }
-//        if let second = currentLocationParamName{
-//            currentLocationLbl.text = second
-//        }
-        myPage.currentPage = 0
-        myPage.numberOfPages = webImage.count
-        
-    }
-    
-    
-    
+
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
         if !checkLocation{
-            locationName.text = "위치정보 : 수원(default)"
+            locationYesOrNoLabel.text = "위치정보 : 수원(default)"
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        myPage.currentPage = indexPath.row
-        print("idexPath.row : \(indexPath.row)")
-    }
-    
-    
-    
-    
-
 
 }
 
-// MARK: 컬렉션 뷰, 페이지컨트롤 추가
+// MARK: 컬렉션 뷰
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -86,10 +53,12 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
             cell.lowTempLabel.text = ""
         }else{
             cell.myImage.image = UIImage(named: webImage[indexPath.row])
+            cell.myLocationLabel.text = webImage[indexPath.row]
         }
         return cell
         
     }
+    
     
     
 }
@@ -114,18 +83,11 @@ extension ViewController:CLLocationManagerDelegate{
             print("사용자 : 위치 허용")
             self.locationManager.startUpdatingLocation()
             checkLocation = true
-            locationName.text = "제주도"
         case .restricted, .notDetermined:
             print("사용자 : 위치 사용 여부 체크중")
-            
             // 허용 거부
         case .denied:
-            let aController = myStoryBoard.instantiateViewController(withIdentifier: "locationFalseController")
-            aController.modalPresentationStyle = .fullScreen
             checkLocation = false
-            DispatchQueue.main.async {
-                self.present(aController, animated: false)
-            }
         default:
             print("GPS: default")
             
@@ -134,4 +96,5 @@ extension ViewController:CLLocationManagerDelegate{
     }
     
 }
+
 
