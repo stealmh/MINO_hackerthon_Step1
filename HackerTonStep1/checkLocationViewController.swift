@@ -20,7 +20,8 @@ class checkLocationViewController: UIViewController {
     @IBAction func backBtn(_ sender: UIButton) {
         let preVC = self.presentingViewController
         guard let vc = preVC as? ViewController else {return}
-        vc.paramName = sender.currentTitle
+//        vc.paramName = sender.currentTitle
+        vc.webImage.append("batman")
         vc.currentLocationParamName = "위치정보 : 미사용"
         self.presentingViewController?.dismiss(animated: true)
         

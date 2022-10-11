@@ -30,14 +30,18 @@ class ViewController: UIViewController {
         
     }
     
-//    override func viewWillAppear(_ animated: Bool){
-//        if let first = paramName{
-//            locationName.text = first
-//        }
+    override func viewWillAppear(_ animated: Bool){
+        if let first = paramName{
+            locationName.text = first
+        }
 //        if let second = currentLocationParamName{
 //            currentLocationLbl.text = second
 //        }
-//    }
+        myPage.currentPage = 0
+        myPage.numberOfPages = webImage.count
+        
+    }
+    
     
     
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
@@ -60,6 +64,7 @@ class ViewController: UIViewController {
 
 // MARK: 컬렉션 뷰, 페이지컨트롤 추가
 extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return webImage.count
     }
