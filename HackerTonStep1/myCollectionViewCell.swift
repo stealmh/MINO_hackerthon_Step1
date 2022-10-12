@@ -22,6 +22,6 @@ class myCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var hTempLabel: UILabel!
     @IBOutlet weak var lTempLabel: UILabel!
-    
+    @IBOutlet weak var deleteButton: UIButton!
     
 }

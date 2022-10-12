@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var locationYesOrNoLabel: UILabel!
     var tableviewController = tableViewController()
     var v1TestValue: Int?
-    var webImage: [String] = ["default","plus.circle"]
+    var webImage: [String] = ["a","b","c","default","test","plus.circle"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +35,21 @@ class ViewController: UIViewController {
         }
     }
     
+    //휴지통 클릭시 이벤트
+    @objc func deleteTapped(sender: UIButton) {
+        if webImage.count <= 2{
+            print("셀을 삭제할 수 없음")
+        }else{
+            collectionview.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
+            webImage.remove(at: sender.tag)
+            print(webImage)
+            collectionview.reloadData()
+        }
+    }
+    //
+    
     //이미지 클릭시 이벤트
-    @objc func tapped() {
+    @objc func imageTapped() {
         
         guard let second = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? tableViewController else {return}
         present(second, animated: true,completion: nil)
@@ -57,6 +70,9 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCollectionViewCell
+        cell.deleteButton.tag = indexPath.row
+        cell.deleteButton.addTarget(self, action: #selector(deleteTapped(sender:)), for: .touchUpInside)
+        
         if indexPath.row == webImage.endIndex - 1 {
             cell.myImage.image = UIImage(systemName: "plus.circle")
             cell.myLocationLabel.text = ""
@@ -69,11 +85,18 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
             cell.highTempLabel.text = ""
             cell.lTempLabel.text = ""
             cell.lowTempLabel.text = ""
+            cell.deleteButton.isEnabled = false
+            cell.deleteButton.isHidden = true
             
             //이미지 클릭할 수 있게끔 하는 코드
-            let imageClick = UITapGestureRecognizer(target: self, action: #selector(tapped))
+            let imageClick = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
             cell.myImage.isUserInteractionEnabled = true
             cell.myImage.addGestureRecognizer(imageClick)
+            //
+            
+            //
+//            cell.deleteButton.tag = indexPath.row
+//            cell.deleteButton.addTarget(self, action: #selector(deleteTapped(sender:)), for: .touchUpInside)
             //
         }else{
             cell.myImage.image = UIImage(named: webImage[indexPath.row])
@@ -87,6 +110,8 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
             cell.highTempLabel.text = "99도"
             cell.lTempLabel.text = "금일 최저온도"
             cell.lowTempLabel.text = "50도"
+            cell.deleteButton.isHidden = false
+            cell.deleteButton.isEnabled = true
         }
         return cell
 
