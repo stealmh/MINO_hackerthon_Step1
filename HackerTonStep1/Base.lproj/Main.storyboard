@@ -213,13 +213,7 @@
                             <constraint firstItem="R7J-wY-cMI" firstAttribute="top" secondItem="4Hm-vb-vB0" secondAttribute="top" id="oY1-6N-MD9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0C2-58-zbq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="CSa-o9-gh8">
-                            <connections>
-                                <segue destination="kLO-VD-bGR" kind="show" id="7Yk-iU-tRI"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="0C2-58-zbq"/>
                     <connections>
                         <outlet property="collectionview" destination="Wnu-YW-oms" id="hgr-RC-ry2"/>
                         <outlet property="locationYesOrNoLabel" destination="KIM-8H-lAO" id="ouO-n7-oUX"/>
@@ -229,16 +223,31 @@
             </objects>
             <point key="canvasLocation" x="1206.1538461538462" y="-11.374407582938389"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="thY-0p-CwG">
+            <objects>
+                <viewController id="QOs-d4-xDX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ojh-t8-jng">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="jYq-mn-c5K"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdb-qH-9cd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2911" y="-11"/>
+        </scene>
         <!--Table View Controller-->
         <scene sceneID="DOJ-gR-F4d">
             <objects>
-                <viewController id="kLO-VD-bGR" customClass="tableViewController" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="secondVC" id="kLO-VD-bGR" customClass="tableViewController" customModule="HackerTonStep1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mhi-Un-pdK">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bHC-oT-d58">
-                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" id="rnt-j9-eHn" customClass="myTableViewCell" customModule="HackerTonStep1" customModuleProvider="target">
@@ -280,7 +289,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze6-wM-siA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="-11"/>
+            <point key="canvasLocation" x="2168" y="-11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yea-oq-EjS">

@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     var checkLocation: Bool = false
     var mycell = myCollectionViewCell()
     @IBOutlet weak var locationYesOrNoLabel: UILabel!
-    
+    var tableviewController = tableViewController()
+    var v1TestValue: Int?
     var webImage: [String] = ["default","plus.circle"]
 
     override func viewDidLoad() {
@@ -22,16 +23,24 @@ class ViewController: UIViewController {
         setup()
 
     }
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        if let first =
+//    }
+    
 
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
         if !checkLocation{
             locationYesOrNoLabel.text = "위치정보 : 수원(default)"
         }
     }
+    
     //이미지 클릭시 이벤트
     @objc func tapped() {
+        
+        guard let second = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? tableViewController else {return}
+        present(second, animated: true,completion: nil)
         webImage.popLast()
-        webImage.append("TEST_DATA")
         webImage.append("plus.circle")
         collectionview.reloadData()
     }

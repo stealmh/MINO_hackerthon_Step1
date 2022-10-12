@@ -11,11 +11,15 @@ class tableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var koreaLocationName: [String] = ["서울","부산","인천","대전","광주","대구","울산"]
+    var testValue: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.dismiss(animated: true)
     }
 
 }
