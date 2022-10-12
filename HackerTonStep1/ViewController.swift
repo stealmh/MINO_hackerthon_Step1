@@ -35,10 +35,23 @@ class ViewController: UIViewController {
         }
     }
     
-    //휴지통 클릭시 이벤트
+// MARK: 알람버튼 (날씨정보가 1개만 남았을 때)
+    @objc func cantDelete() {
+        let alert = UIAlertController(title: "삭제 할 수 없음", message: "최소 1개의 날씨정보가 있어야 합니다.", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        let no = UIAlertAction(title: "돌아가기", style: .default)
+        
+        alert.addAction(ok)
+        alert.addAction(no)
+        
+        present(alert,animated: true)
+    }
+        
+ 
+// MARK: 삭제버튼 클릭시 이벤트
     @objc func deleteTapped(sender: UIButton) {
         if webImage.count <= 2{
-            print("셀을 삭제할 수 없음")
+            cantDelete()
         }else{
             collectionview.deleteItems(at: [IndexPath.init(row: sender.tag, section: 0)])
             webImage.remove(at: sender.tag)
@@ -48,7 +61,7 @@ class ViewController: UIViewController {
     }
     //
     
-    //이미지 클릭시 이벤트
+// MARK: 셀 추가 이미지 클릭시 셀 추가 이벤트
     @objc func imageTapped() {
         
         guard let second = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? tableViewController else {return}
@@ -66,7 +79,6 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return webImage.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCollectionViewCell
