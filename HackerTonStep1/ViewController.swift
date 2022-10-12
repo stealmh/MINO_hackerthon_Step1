@@ -30,7 +30,9 @@ class ViewController: UIViewController {
     }
     //이미지 클릭시 이벤트
     @objc func tapped() {
+        webImage.popLast()
         webImage.append("TEST_DATA")
+        webImage.append("plus.circle")
         collectionview.reloadData()
     }
     //
@@ -67,6 +69,15 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
         }else{
             cell.myImage.image = UIImage(named: webImage[indexPath.row])
             cell.myLocationLabel.text = webImage[indexPath.row]
+            cell.myWeatherDescribeLabel.text = "맑음"
+            cell.tempLabel.text = "현재 기온"
+            cell.myTempLabel.text = "20도"
+            cell.humidityLabel.text = "현재 습도"
+            cell.myHumidityLabel.text = "50%"
+            cell.hTempLabel.text = "금일 최고온도"
+            cell.highTempLabel.text = "99도"
+            cell.lTempLabel.text = "금일 최저온도"
+            cell.lowTempLabel.text = "50도"
         }
         return cell
 
