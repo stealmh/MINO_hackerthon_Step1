@@ -23,11 +23,6 @@ class ViewController: UIViewController {
         setup()
 
     }
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        if let first =
-//    }
-    
 
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
         if !checkLocation{
@@ -67,6 +62,7 @@ class ViewController: UIViewController {
         guard let second = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? tableViewController else {return}
         present(second, animated: true,completion: nil)
         webImage.popLast()
+        webImage.append("TEST_LOCATION")
         webImage.append("plus.circle")
         collectionview.reloadData()
     }
@@ -82,6 +78,8 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! myCollectionViewCell
+        
+        //삭제 이벤트
         cell.deleteButton.tag = indexPath.row
         cell.deleteButton.addTarget(self, action: #selector(deleteTapped(sender:)), for: .touchUpInside)
         
@@ -106,10 +104,6 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
             cell.myImage.addGestureRecognizer(imageClick)
             //
             
-            //
-//            cell.deleteButton.tag = indexPath.row
-//            cell.deleteButton.addTarget(self, action: #selector(deleteTapped(sender:)), for: .touchUpInside)
-            //
         }else{
             cell.myImage.image = UIImage(named: webImage[indexPath.row])
             cell.myLocationLabel.text = webImage[indexPath.row]

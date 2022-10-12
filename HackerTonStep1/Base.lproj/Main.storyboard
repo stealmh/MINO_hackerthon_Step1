@@ -223,7 +223,13 @@
                             <constraint firstItem="R7J-wY-cMI" firstAttribute="top" secondItem="4Hm-vb-vB0" secondAttribute="top" id="oY1-6N-MD9"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0C2-58-zbq"/>
+                    <navigationItem key="navigationItem" id="0C2-58-zbq">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="uTC-NV-5MV">
+                            <connections>
+                                <segue destination="QOs-d4-xDX" kind="show" id="05M-Ut-N9j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionview" destination="Wnu-YW-oms" id="hgr-RC-ry2"/>
                         <outlet property="locationYesOrNoLabel" destination="KIM-8H-lAO" id="ouO-n7-oUX"/>
@@ -240,13 +246,56 @@
                     <view key="view" contentMode="scaleToFill" id="Ojh-t8-jng">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="160" translatesAutoresizingMaskIntoConstraints="NO" id="dto-Hf-LKd">
+                                <rect key="frame" x="40" y="111" width="310" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치 정보 사용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqW-SI-anK">
+                                        <rect key="frame" x="0.0" y="0.0" width="101" height="31"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5kr-Js-qlm">
+                                        <rect key="frame" x="261" y="0.0" width="51" height="31"/>
+                                    </switch>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="문의하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qIX-ip-OlD">
+                                <rect key="frame" x="72" y="176" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개인 정보 처리 방침" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wsg-WO-fYw">
+                                <rect key="frame" x="72" y="271" width="131" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="개발자 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZn-Zk-LOi">
+                                <rect key="frame" x="72" y="386" width="78" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jYq-mn-c5K"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dto-Hf-LKd" firstAttribute="top" secondItem="jYq-mn-c5K" secondAttribute="top" constant="20" id="PVD-wi-CSk"/>
+                            <constraint firstItem="jYq-mn-c5K" firstAttribute="trailing" secondItem="dto-Hf-LKd" secondAttribute="trailing" constant="40" id="QgY-zb-qjc"/>
+                            <constraint firstItem="dto-Hf-LKd" firstAttribute="leading" secondItem="jYq-mn-c5K" secondAttribute="leading" constant="40" id="xUF-pV-oBt"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XC5-xY-sIs"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdb-qH-9cd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2911" y="-11"/>
+            <point key="canvasLocation" x="1958" y="-11"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="DOJ-gR-F4d">
@@ -299,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze6-wM-siA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2168" y="-11"/>
+            <point key="canvasLocation" x="1206" y="661"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yea-oq-EjS">
@@ -322,6 +371,7 @@
     </scenes>
     <resources>
         <image name="batman" width="1000" height="1000"/>
+        <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <image name="trash.fill" catalog="system" width="119" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
