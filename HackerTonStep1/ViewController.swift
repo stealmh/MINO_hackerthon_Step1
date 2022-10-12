@@ -9,12 +9,14 @@ import UIKit
 import CoreLocation
 
 class ViewController: UIViewController {
+    @IBOutlet weak var collectionview: UICollectionView!
     var locationManager: CLLocationManager!
     var checkLocation: Bool = false
     var mycell = myCollectionViewCell()
     @IBOutlet weak var locationYesOrNoLabel: UILabel!
-    var webImage: [String] = ["default","plus.circle"]
     
+    var webImage: [String] = ["default","plus.circle"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -26,7 +28,12 @@ class ViewController: UIViewController {
             locationYesOrNoLabel.text = "위치정보 : 수원(default)"
         }
     }
-
+    //이미지 클릭시 이벤트
+    @objc func tapped() {
+        webImage.append("TEST_DATA")
+        collectionview.reloadData()
+    }
+    //
 }
 
 // MARK: 컬렉션 뷰
@@ -51,15 +58,19 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
             cell.highTempLabel.text = ""
             cell.lTempLabel.text = ""
             cell.lowTempLabel.text = ""
+            
+            //이미지 클릭할 수 있게끔 하는 코드
+            let imageClick = UITapGestureRecognizer(target: self, action: #selector(tapped))
+            cell.myImage.isUserInteractionEnabled = true
+            cell.myImage.addGestureRecognizer(imageClick)
+            //
         }else{
             cell.myImage.image = UIImage(named: webImage[indexPath.row])
             cell.myLocationLabel.text = webImage[indexPath.row]
         }
         return cell
-        
+
     }
-    
-    
     
 }
 
@@ -83,6 +94,8 @@ extension ViewController:CLLocationManagerDelegate{
             print("사용자 : 위치 허용")
             self.locationManager.startUpdatingLocation()
             checkLocation = true
+            locationYesOrNoLabel.text = "위치 사용중"
+            locationYesOrNoLabel.backgroundColor = .red
         case .restricted, .notDetermined:
             print("사용자 : 위치 사용 여부 체크중")
             // 허용 거부

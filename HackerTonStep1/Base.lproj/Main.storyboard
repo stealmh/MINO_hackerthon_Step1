@@ -221,6 +221,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionview" destination="Wnu-YW-oms" id="hgr-RC-ry2"/>
                         <outlet property="locationYesOrNoLabel" destination="KIM-8H-lAO" id="ouO-n7-oUX"/>
                     </connections>
                 </viewController>
