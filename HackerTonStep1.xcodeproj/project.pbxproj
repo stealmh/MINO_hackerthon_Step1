@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		168C59BF28F54EDC00496DA8 /* myTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C59BE28F54EDC00496DA8 /* myTableViewCell.swift */; };
 		168C59C128F54F7000496DA8 /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168C59C028F54F7000496DA8 /* tableViewController.swift */; };
+		1693C52428F7A1FD005A3AEF /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1693C52328F7A1FD005A3AEF /* SettingTableViewController.swift */; };
+		1693C52628F7A20B005A3AEF /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1693C52528F7A20B005A3AEF /* SettingTableViewCell.swift */; };
 		16CB8F4C28F47B690052F0D8 /* myCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16CB8F4B28F47B690052F0D8 /* myCollectionViewCell.swift */; };
 		16EDBCC128ED032F0031DEFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDBCC028ED032F0031DEFB /* AppDelegate.swift */; };
 		16EDBCC328ED032F0031DEFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDBCC228ED032F0031DEFB /* SceneDelegate.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		168C59BE28F54EDC00496DA8 /* myTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTableViewCell.swift; sourceTree = "<group>"; };
 		168C59C028F54F7000496DA8 /* tableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
+		1693C52328F7A1FD005A3AEF /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		1693C52528F7A20B005A3AEF /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		16CB8F4B28F47B690052F0D8 /* myCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myCollectionViewCell.swift; sourceTree = "<group>"; };
 		16EDBCBD28ED032F0031DEFB /* HackerTonStep1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerTonStep1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EDBCC028ED032F0031DEFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 				16CB8F4B28F47B690052F0D8 /* myCollectionViewCell.swift */,
 				168C59BE28F54EDC00496DA8 /* myTableViewCell.swift */,
 				168C59C028F54F7000496DA8 /* tableViewController.swift */,
+				1693C52328F7A1FD005A3AEF /* SettingTableViewController.swift */,
+				1693C52528F7A20B005A3AEF /* SettingTableViewCell.swift */,
 			);
 			path = HackerTonStep1;
 			sourceTree = "<group>";
@@ -108,6 +114,7 @@
 				TargetAttributes = {
 					16EDBCBC28ED032F0031DEFB = {
 						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -147,11 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1693C52428F7A1FD005A3AEF /* SettingTableViewController.swift in Sources */,
 				16EDBCC528ED032F0031DEFB /* ViewController.swift in Sources */,
 				168C59BF28F54EDC00496DA8 /* myTableViewCell.swift in Sources */,
 				16CB8F4C28F47B690052F0D8 /* myCollectionViewCell.swift in Sources */,
 				168C59C128F54F7000496DA8 /* tableViewController.swift in Sources */,
 				16EDBCC128ED032F0031DEFB /* AppDelegate.swift in Sources */,
+				1693C52628F7A20B005A3AEF /* SettingTableViewCell.swift in Sources */,
 				16EDBCC328ED032F0031DEFB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +306,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69AX92X75M;
@@ -315,6 +325,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.study.HackerTonStep1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -325,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 69AX92X75M;
