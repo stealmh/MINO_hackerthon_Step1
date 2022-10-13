@@ -21,7 +21,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        print(checkLocation)
     }
 
     @IBAction func locationReAllowCheck(_ sender: UIButton) {
@@ -62,7 +64,7 @@ class ViewController: UIViewController {
         guard let second = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? tableViewController else {return}
         present(second, animated: true,completion: nil)
         webImage.popLast()
-        webImage.append("TEST_LOCATION")
+        webImage.append("추가한 셀")
         webImage.append("plus.circle")
         collectionview.reloadData()
     }
@@ -105,7 +107,7 @@ extension ViewController: UICollectionViewDataSource,UICollectionViewDelegate{
             //
             
         }else{
-            cell.myImage.image = UIImage(named: webImage[indexPath.row])
+            cell.myImage.image = UIImage(named: "sun.png")
             cell.myLocationLabel.text = webImage[indexPath.row]
             cell.myWeatherDescribeLabel.text = "맑음"
             cell.tempLabel.text = "현재 기온"
